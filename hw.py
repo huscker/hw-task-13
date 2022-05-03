@@ -30,7 +30,7 @@ for j,el in enumerate(organizations):
     res['course_students_enrolled'] = res['course_students_enrolled'].apply(format_students)
     nums2 = [res['course_students_enrolled'].max(),
             res['course_students_enrolled'].min(),
-            res['course_students_enrolled'].sum()/len(res['course_students_enrolled'])]
+            res['course_students_enrolled'].mean()]
     ax[0][j].pie(nums1,labels=cols1, autopct='%.0f%%')
     ax[1][j].bar(cols2, nums2,log=True)
     ax[0][j].set_title(el)
